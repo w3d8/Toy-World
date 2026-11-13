@@ -1,0 +1,376 @@
+:root {
+    --primary-color: rgba(84, 27, 164, 0.5);
+    --secondary-color: rgba(224, 211, 135, 0.5);
+    --hover-color: rgba(237, 168, 58, 0.5);
+}
+
+/* ======================== General Styles ======================== */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: rgb(253, 253, 253);
+    margin: 0;
+    padding: 20px;
+    background-image: url('images/Toy World Logo.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    background-color: #f9f9f9; /* Added to cover background color */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(84, 27, 164, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+/* ======================== Navbar ======================== */
+.navbar {
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar:hover, .nav-link:hover {
+    color: var(--hover-color);
+}
+
+.nav-link {
+    color: inherit;
+    font-weight: inherit;
+}
+
+/* ======================== Profile Container ======================== */
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================== Profile Tabs ======================== */
+.profile-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.profile-tab {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    border-radius: 25px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.profile-tab.active {
+    background-color: var(--hover-color);
+}
+
+/* ======================== Tab Content ======================== */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ======================== Profile Image ======================== */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.upload-label {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* ======================== Profile Info ======================== */
+.profile-info input {
+    width: 80%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.profile-info .wallet-balance {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* ======================== Buttons ======================== */
+.btn, .btn-custom, .switch-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn:hover, .btn-custom:hover, .switch-btn:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.btn-custom {
+    background-color: var(--primary-color);
+}
+
+.switch-btn {
+    background-color: var(--primary-color);
+    width: 100%;
+    margin-top: 20px;
+    color: white;
+}
+
+/* ======================== Order List ======================== */
+.orders-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.order-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.order-item strong {
+    font-size: 16px;
+}
+
+.order-item small {
+    font-size: 14px;
+    color: gray;
+}
+
+/* ======================== Payment Methods ======================== */
+.payment-method {
+    color: #333;
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #e1dede;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.payment-method p {
+    font-size: 14px;
+}
+
+/* ======================== Modal ======================== */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* ======================== Login and Sign Up ======================== */
+form {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+form p {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+/* ======================== Products & Cart ======================== */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product {
+    width: 200px;
+    background-color: var(--primary-color);
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Cart Icon */
+.cart-icon {
+    font-size: 20px;
+    background-color: #5943aab1;
+    border: 1px solid #5943aac2;
+    padding: 10px 15px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1100;
+}
+
+/* Sidebar Cart */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Hidden by default */
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: 0.3s;
+    overflow-y: auto;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 45px;
+    font-size: 24px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cart Count - Adjusted for better visibility */
+.cart-icon span {
+    position: absolute;
+    top: -5px;
+    left: -5px; /* Move to the left for better visibility */
+    background: red;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 8px;
+    border-radius: 50%;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* ======================== Media Queries ======================== */
+@media (max-width: 768px) {
+    .profile-tabs {
+        flex-direction: column;
+    }
+
+    .profile-tab {
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-info input {
+        width: 90%;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    .category-buttons button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .category-buttons button:hover {
+        background-color: #0056b3;
+    }
+
+    .products-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .product {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        background-color: white;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .product img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+}
